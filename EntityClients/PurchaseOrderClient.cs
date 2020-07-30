@@ -34,17 +34,31 @@ namespace D365Entities.EntityClients
         public async Task<PurchaseOrderHeaderV2> Post(PurchaseOrderHeaderV2 entity)
         {
             var vendorClient = new VendorClient(logger, context);
+            var legalEntityClient = new LegalEntityClient(logger, context);
 
             var vendor = (await vendorClient.Get(entity.OrderVendorAccountNumber)) ?? throw new Exception($"Vendor does not exists");
-            
-            context.AddToPurchaseOrderHeadersV2(entity);
+            var legalEntity = (await legalEntityClient.Get(entity.DataAreaId)) ?? throw new Exception($"Legal entity does not exiss");
 
+            if (string.IsNullOrEmpty(entity.DeliveryAddressLocationId))
+            {
+                entity.DeliveryAddressLocationId = legalEntity.PrimaryAddressLocationId;
+            }
+            context.AddToPurchaseOrderHeadersV2(entity);
+            var lineNumber = 1;
             foreach (var line in entity.PurchaseOrderLinesV2)
             {
+                line.LineNumber = lineNumber;
+                if(string.IsNullOrEmpty(line.DeliveryAddressLocationId))
+                {
+                    line.DeliveryAddressLocationId = entity.DeliveryAddressLocationId;
+                }    
+                
                 context.AddToPurchaseOrderLinesV2(line);
+
+                lineNumber++;
             }
 
-            //await context.SaveChangesAsync();
+            await context.SaveChangesAsync();
 
             return entity;            
         }

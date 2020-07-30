@@ -20,7 +20,7 @@ namespace D365Entities.EntityClients
 
             var vendor = $"{arguments[0]}";
 
-            var query = context.VendorsV2.AddQueryOption(nameof(VendorV2.VendorAccountNumber), vendor);
+            var query = context.VendorsV2.AddQueryOption("$filter", $"{nameof(VendorV2.VendorAccountNumber)} eq '{vendor}'");
 
             var result = await query.ExecuteAsync();
             return result.FirstOrDefault();
