@@ -1,0 +1,9 @@
+C:\Users\ameer\Source\Repos\ConsoleApp7\D365Entities\obj\Debug\netcoreapp3.1\D365Entities.csprojAssemblyReference.cache
+C:\Users\ameer\Source\Repos\ConsoleApp7\D365Entities\obj\Debug\netcoreapp3.1\D365Entities.csproj.CoreCompileInputs.cache
+C:\Users\ameer\Source\Repos\ConsoleApp7\D365Entities\obj\Debug\netcoreapp3.1\D365Entities.AssemblyInfoInputs.cache
+C:\Users\ameer\Source\Repos\ConsoleApp7\D365Entities\obj\Debug\netcoreapp3.1\D365Entities.AssemblyInfo.cs
+C:\Users\ameer\Source\Repos\ConsoleApp7\D365Entities\bin\Debug\netcoreapp3.1\D365Entities.deps.json
+C:\Users\ameer\Source\Repos\ConsoleApp7\D365Entities\bin\Debug\netcoreapp3.1\D365Entities.dll
+C:\Users\ameer\Source\Repos\ConsoleApp7\D365Entities\bin\Debug\netcoreapp3.1\D365Entities.pdb
+C:\Users\ameer\Source\Repos\ConsoleApp7\D365Entities\obj\Debug\netcoreapp3.1\D365Entities.dll
+C:\Users\ameer\Source\Repos\ConsoleApp7\D365Entities\obj\Debug\netcoreapp3.1\D365Entities.pdb
